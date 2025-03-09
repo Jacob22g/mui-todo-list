@@ -25,8 +25,6 @@ function TodoList({ todoList, loading, onDelete, onToggle, onEdit }: TodoListPro
     const [editedTodo, setEditedTodo] = useState<Todo>(todos[0]);
     const [editDialogOpen, setEditDialogOpen] = useState(false);
 
-    console.log(todos)
-
     useEffect(() => {
         setTodos(todoList);
     }, [todoList]);
