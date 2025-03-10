@@ -14,7 +14,7 @@ function App() {
     const [filteredTodos, setFilteredTodos] = useState<Todo[]>(todos);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
-    const [createDialogOpen, setCreateDialogOpen] = useState(false);
+    const [openCreateDialog, setOpenCreateDialog] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
 
@@ -32,7 +32,7 @@ function App() {
         fetchTodos().then(() => setLoading(false));
     }, []);
 
-    // Debounce the search term
+    // Debounce the search term - to simulate it calling an api
     useEffect(() => {
         const timer = setTimeout(() => {
             setDebouncedSearchTerm(searchTerm);
@@ -126,12 +126,12 @@ function App() {
                             },
                         }}
                     />
-                    <Button variant="contained" onClick={() => setCreateDialogOpen(true)}>Add Item</Button>
+                    <Button variant="contained" onClick={() => setOpenCreateDialog(true)}>Add Item</Button>
                 </div>
             </div>
             <CreateTodoDialog
-                open={createDialogOpen}
-                onClose={() => setCreateDialogOpen(false)}
+                open={openCreateDialog}
+                onClose={() => setOpenCreateDialog(false)}
                 onSubmit={handleCreateTodo}
             />
             <TodoList

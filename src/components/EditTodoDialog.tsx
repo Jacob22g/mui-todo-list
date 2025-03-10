@@ -32,6 +32,7 @@ function EditTodoDialog({ open, onClose, onSubmit, todo }: EditTodoDialogProps) 
 
     return (
         <Dialog
+            fullWidth
             open={open}
             onClose={onClose}
             slotProps={{

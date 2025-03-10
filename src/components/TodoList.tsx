@@ -62,7 +62,7 @@ function TodoList({ todoList, loading, onDelete, onToggle, onEdit }: TodoListPro
                                 }
                                 disablePadding
                             >
-                                <ListItemButton dense>
+                                <ListItemButton>
                                     <ListItemIcon>
                                         <Checkbox
                                             edge="start"

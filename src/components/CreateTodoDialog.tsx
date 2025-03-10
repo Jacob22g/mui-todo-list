@@ -25,6 +25,7 @@ function CreateTodoDialog({ open, onClose, onSubmit }: CreateTodoDialogProps) {
 
     return (
         <Dialog
+            fullWidth
             open={open}
             onClose={onClose}
             slotProps={{
